@@ -1,5 +1,5 @@
-import { NodeModel } from '../node/node.model';
-import { TransitionModel } from '../transition/transition.model';
+import { NodeModel } from './node.model';
+import { TransitionModel } from './transition.model';
 
 class GraphModel {
   nodes: Array<NodeModel>;

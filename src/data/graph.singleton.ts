@@ -1,6 +1,6 @@
-import { GraphModel } from '../graph/graph.model';
-import { NodeModel } from '../node/node.model';
-import { TransitionModel } from '../transition/transition.model';
+import { GraphModel } from './graph.model';
+import { NodeModel } from './node.model';
+import { TransitionModel } from './transition.model';
 
 class GraphSingleton {
   private static instance: GraphModel;

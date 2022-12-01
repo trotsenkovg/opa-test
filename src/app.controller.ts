@@ -1,17 +1,12 @@
 import { Controller, Get } from '@nestjs/common';
-import { GraphService } from './graph/graph.service';
+import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly graphService: GraphService) {}
+  constructor(private service: AppService) {}
 
-  @Get('/first')
-  getByTransition(): number {
-    return this.graphService.getByTransition();
-  }
-
-  @Get('/second')
-  getByTransitionAndStatuses(): object {
-    return this.graphService.getByTransitionAndStatus();
+  @Get('')
+  getHello() {
+    return this.service.getHello();
   }
 }
