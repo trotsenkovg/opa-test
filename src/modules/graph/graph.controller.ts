@@ -1,5 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { GraphService } from './graph.service';
+import { TransitionValues } from './interfaces/transitionValues.interface';
 
 @Controller()
 export class GraphController {
@@ -11,7 +12,7 @@ export class GraphController {
   }
 
   @Get('/second')
-  getByTransitionAndStatuses(): object {
+  getByTransitionAndStatuses(): TransitionValues[] {
     return this.graphService.getByTransitionAndStatus();
   }
 }

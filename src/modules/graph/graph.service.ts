@@ -1,5 +1,6 @@
 import { GraphSingleton } from './entities/graph.singleton';
 import { Injectable } from '@nestjs/common';
+import { TransitionValues } from './interfaces/transitionValues.interface';
 
 @Injectable()
 class GraphService {
@@ -12,7 +13,7 @@ class GraphService {
   findNextStatusByTransitionAndStatuses(
     transition: Array<string>,
     statuses: Array<number>,
-  ): object {
+  ): TransitionValues[] {
     const transitions = GraphSingleton.getInstance()
       .transitions.filter(
         (t) => JSON.stringify(t.rules) === JSON.stringify(transition),
@@ -31,7 +32,7 @@ class GraphService {
     return this.findNextStatusByTransition(['RAS']);
   }
 
-  getByTransitionAndStatus(): object {
+  getByTransitionAndStatus(): TransitionValues[] {
     return this.findNextStatusByTransitionAndStatuses(['RPS'], [4, 5, 3]);
   }
 }
