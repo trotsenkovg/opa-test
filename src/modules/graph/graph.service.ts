@@ -1,4 +1,4 @@
-import { GraphSingleton } from '../data/graph.singleton';
+import { GraphSingleton } from './entities/graph.singleton';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
